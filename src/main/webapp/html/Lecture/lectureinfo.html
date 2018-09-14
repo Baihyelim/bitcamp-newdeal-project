@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>강의 상세보기</title>
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/common.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="float-left" id="lno"></div>
+		<div class="float-right">
+			<button type="button" class="btn btn-secondary btn-sm" id="logoutBtn">로그아웃</button>
+		</div>
+		<div class="pagetitle">
+			<h2>강의 제목</h2>
+		</div>
+		<div class="list-container logpad">
+			<table id="eListTable" class="table table-hover">
+				<thead>
+					<tr class="table-active">
+						<th scope="col">과목번호</th>
+						<th scope="col">개설학과</th>
+						<th scope="col">강의제목</th>
+						<th scope="col">강의실</th>
+						<th scope="col">개강일</th>
+						<th scope="col">종강일</th>
+						<th scope="col">신청현황</th>
+						<th scope="col">강의자료</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div class="col-sm-12 blog-main">
+				<div class="blog-post" id="content">
+					
+				</div>
+			</div>
+		</div>
+		<div class="pagetitle">
+			<button type="button" class="btn btn-secondary" onclick="location.href='list.html'">목록</button>
+		</div>
+	</div>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.bit.js"></script>
+    <script src="../js/loaduser.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="lectureinfo.js"></script>
+</body>
+</html>

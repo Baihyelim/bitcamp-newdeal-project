@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bitcamp.newdeal.repository.StudentApplyRepository">
+
+	<resultMap type="studentApply" id="studentApplyMap">
+		<id column="lNo" property="lectureNo" />
+        <result column="sNum" property="sNum" />
+        <result column="lName" property="lectureName" />
+        <result column="lSubject" property="lectureSubject" />
+        <result column="lContent" property="lectureContent" />
+        <result column="lRoom" property="lectureRoom" />
+        <result column="lFile" property="lectureFile" />
+        <result column="lMember" property="lectureMember" />
+        <result column="lMaxMember" property="lectureMaxMember" />
+        <result column="lAble" property="lectureAble" />
+        <result column="lStartDay" property="lectureStartDay" />
+        <result column="lEndDay" property="lectureEndDay" />
+        <result column="lTime" property="lectureTime" />
+	</resultMap>
+    
+    
+    <select id="myApplyList" parameterType="int" resultMap="studentApplyMap">
+    
+    SELECT * FROM `P3_Lecture` 
+    WHERE lNo IN (SELECT lNo FROM P3_StudentList WHERE sNum=#{value})
+    
+    </select>
+
+</mapper>
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>강의수정</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>강의수정</h2>
+        <div class="upload-container">
+            <form class="col-md-6 logpad">
+                <div class="form-group">
+                    <label for="major">개설학과</label>
+                    <input type="text" class="form-control" id="major">
+                </div>
+                <div class="form-group">
+                    <label for="name">강의명</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="purpose">강의내용</label>
+                    <textarea type="text" class="form-control" id="content" rows="10" cols="25"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="capacity">정원</label>
+                    <input type="number" class="form-control" id="capacity">
+                </div>
+                <label>강의계획서</label>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="syllabus" name="file" data-url="../json/lecture/insert" multiple>
+                        <label class="custom-file-label" for="syllabus">파일선택</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="room">강의실</label>
+                    <input type="text" class="form-control" id="room">
+                </div>
+                <div class="form-group">
+                    <label for="startdate">시작일</label>
+                    <input type="date" class="form-control" id="startdate">
+                </div>
+                <div class="form-group">
+                    <label for="enddate">종료일</label>
+                    <input type="date" class="form-control" id="enddate">
+                </div>
+                <div class="form-group">
+                    <label for="time">강의시간</label>
+                    <input type="time" class="form-control" id="time">
+                </div>
+                <hr>
+                <button type="button" id="regClsBtn" class="btn btn-primary" style="width: 100%">강의수정</button>
+            </form>
+        </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.bit.js"></script>
+    <script src="../js/loaduser.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="lectureupdate.js"></script>
+</body>
+
+</html>

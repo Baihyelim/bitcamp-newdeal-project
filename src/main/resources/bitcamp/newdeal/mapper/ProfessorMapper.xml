@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bitcamp.newdeal.repository.ProfessorRepository">
+
+  <resultMap type="professor" id="professorMap">
+    <id column="pNum" property="pNum"/>
+    <result column="pNo" property="professorNo"/>
+    <result column="pPassword" property="professorPwd"/>
+    <result column="pName" property ="professorName"/>
+    <result column="pTel" property="professorTel"/>
+    <result column="pMajor" property="professorMajor"/>
+    <result column="pEmail" property ="professorEmail"/>
+    <result column="pLecture" property="professorLecture"/>
+    <result column="pClassAble" property="professorClassAble"/>
+    
+  </resultMap>
+
+ <select id="findLectureByProfessorNo" 
+          parameterType="map"
+          resultMap="professorMap">
+    select pNum, pNo, pName 
+    from P3_Professor
+    where pNo=#{professorNo} and pPassword=password(#{professorPwd})
+  </select>
+  
+    <select id="lecturePname"
+            parameterType="int" resultType="string">
+    SELECT pName FROM P3_Professor WHERE pNum=#{pNum}
+    </select>
+ 
+</mapper>
+
+
+
+

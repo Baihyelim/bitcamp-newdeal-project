@@ -1,0 +1,29 @@
+h2 {
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+}
+
+.logpad {
+    margin-top: 15px;
+}
+
+.pagetitle {
+    width: 100%; 
+    margin-bottom: 30px; 
+    margin-top: 30px;
+    text-align: center;
+}
+
+.search-container {
+    margin: auto;
+}

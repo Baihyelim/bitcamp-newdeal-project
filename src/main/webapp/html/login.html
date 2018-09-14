@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>로그인</title>
+<link rel="stylesheet"
+	href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>
+			수강신청 서비스 <br>
+			<br>
+			<small class="text-muted">로그인</small>
+		</h2>
+		<div class="login-container logpad">
+			<form class="col-md-4">
+				<select class="form-control" id="formc">
+					<option value="0">학생</option>
+					<option value="1">교수</option>
+				</select> <input type="text" class="form-control logpad" name="user" id="no"
+					placeholder="학번(교번)"> <input type="password"
+					class="form-control logpad" name="pass" id="pwd" placeholder="비밀번호">
+				<hr class="logpad">
+				<button type="button" class="btn btn-primary" id="loginBtn"
+					style="width: 100%">로그인</button>
+				<button type="button" class="btn btn-secondary logpad"
+					style="width: 100%" id="joinBtn">회원가입</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="login.js"></script>
+</body>
+
+</html>

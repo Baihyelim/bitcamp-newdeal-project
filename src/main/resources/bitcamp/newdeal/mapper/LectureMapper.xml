@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bitcamp.newdeal.repository.LectureRepository">
+
+	<resultMap type="lecture" id="lectureMap">
+		<id column="lNo" property="lectureNo" />
+		<result column="pNum" property="pNum" />
+		<result column="lName" property="lectureName" />
+		<result column="lSubject" property="lectureSubject" />
+		<result column="lContent" property="lectureContent" />
+		<result column="lRoom" property="lectureRoom" />
+		<result column="lFile" property="lectureFile" />
+		<result column="lMember" property="lectureMember" />
+		<result column="lMaxMember" property="lectureMaxMember" />
+		<result column="lAble" property="lectureAble" />
+		<result column="lStartDay" property="lectureStartDay" />
+		<result column="lEndDay" property="lectureEndDay" />
+		<result column="lTime" property="lectureTime" />
+	</resultMap>
+
+	<select id="lectureList" parameterType="map"
+		resultMap="lectureMap">
+		select * from P3_Lecture 
+		 <if test="startIndex != null and pageSize != null">
+		limit #{startIndex}, #{pageSize}
+		</if>
+	</select>
+	
+	<select id="getTotalPage" resultType="int">
+        select count(*) from P3_Lecture
+    </select>
+	
+	<select id="lectureListSearch" parameterType="string"
+        resultMap="lectureMap">
+        select * from P3_Lecture Where lName like CONCAT('%',#{keyword},'%')
+    </select>
+    
+    <select id="myLectureList"
+          parameterType="int"
+          resultMap="lectureMap">
+        SELECT * FROM P3_Lecture WHERE pNum=#{value}
+  
+    </select>
+    
+    <select id="selectOne"
+          parameterType="int"
+          resultMap="lectureMap">
+        SELECT * FROM P3_Lecture WHERE lNo=#{value}
+  
+    </select>
+    
+
+	<insert id="insert" parameterType="Lecture">
+		insert into P3_Lecture(pNum, lName,lSubject,lContent,lFile,lMember,lMaxMember,lRoom,lAble,lStartDay,lEndDay,lTime)
+		values(#{pNum},#{lectureName},#{lectureSubject},#{lectureContent},#{lectureFile},0,#{lectureMaxMember},#{lectureRoom},'Y',#{lectureStartDay},#{lectureEndDay},#{lectureTime})
+	</insert>
+	
+	<update id="update" parameterType="Lecture">
+        update P3_Lecture set
+        lName = #{lectureName},
+        lSubject = #{lectureSubject},
+        lContent = #{lectureContent},
+        lFile = #{lectureFile},
+        lMaxMember = #{lectureMaxMember},
+        lRoom = #{lectureRoom},
+        lStartDay = #{lectureStartDay},
+        lEndDay = #{lectureEndDay},
+        lTime = #{lectureTime}
+        where 
+            lNo = #{lectureNo}
+    </update>
+	
+	<delete id="delete" parameterType="int">
+        delete from P3_Lecture
+       where 
+            lNo = #{lectureNo}
+    </delete>
+   
+    <update id="applyUpdate" parameterType="int">
+    
+    update P3_Lecture set lMember = lMember+1 where lNo = #{lectureNo}
+    
+   </update>
+   
+   <update id="applyUndo" parameterType="int">
+   update P3_Lecture set lMember = lMember-1 where lNo = #{lectureNo}
+   </update>
+   
+   
+</mapper>
+
+
+
+

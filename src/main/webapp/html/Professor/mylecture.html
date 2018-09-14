@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>나의 연구실</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="float-left">
+            <span id="username"></span> 님의 강의실 입니다.
+            <button type="button" class="btn btn-success btn-sm" onclick="location.href='professorinfo.html'">내 정보</button>
+            <button type="button" class="btn btn-success btn-sm" onclick="location.href='../upload.html'">강의개설</button>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-secondary btn-sm" id="logoutBtn">로그아웃</button>
+        </div>
+        <br>
+        <div class="pagetitle">
+            <h2>나의 연구실</h2>
+        </div>
+        <div class="list-container logpad">
+            <table id="eListTable" class="table table-hover">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">과목번호</th>
+                        <th scope="col">개설학과</th>
+                        <th scope="col">강의제목</th>
+                        <th scope="col">강의실</th>
+                        <th scope="col">개강일</th>
+                        <th scope="col">종강일</th>
+                        <th scope="col">신청현황</th>
+                        <th scope="col">폐강하기</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagetitle">
+            <button type="button" class="btn btn-secondary" onclick="location.href='../Lecture/list.html'">나가기</button>
+        </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/loaduser.js"></script>
+    <script src="mylecture.js"></script>
+    <script src="../js/logout.js"></script>
+    <script>
+        setTimeout(function() {
+            $("#username").text(userName1);
+        }, 500);
+    </script>
+</body>
+
+</html>
